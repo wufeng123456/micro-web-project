@@ -10,27 +10,16 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 import { main } from '../../utils/global'
 import NavTitle from './components/navTitle.vue'
 import IndexAd from './components/ad.vue'
 import CarSwapper from './components/carSwapper.vue'
 import NewsList from './components/newsList.vue'
 
-export default {
-  name: 'index',
-  components: {
-    NavTitle,
-    IndexAd,
-    CarSwapper,
-    NewsList,
-  },
-  setup() {
-    if (main.appInfo) {
-      // main.appInfo.crumbsState.setCrumbs([])
-    }
-  },
-};
+if (main.appInfo) {
+  // main.appInfo.crumbsState.setCrumbs([])
+}
 </script>
 
 <style lang="scss">

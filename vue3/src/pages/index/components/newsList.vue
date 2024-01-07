@@ -80,185 +80,181 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
+import { ref } from 'vue';
 import VTabs from '../../../components/v-tabs/index.vue'
 import Recommend from './recommend.vue'
 const rankCar = require('../../../assets/rank-car.png')
-export default {
-  name: 'newsList',
-  components: {
-    VTabs,
-    Recommend,
-  },
-  data () {
-    return {
-      tabList: [
-        {
-          label: '推荐',
-          value: 0
-        },
-        {
-          label: '视频',
-          value: 1
-        },
-        {
-          label: '新闻',
-          value: 2
-        },
-        {
-          label: '试驾',
-          value: 3
-        },
-        {
-          label: '导购',
-          value: 4
-        },
-        {
-          label: '评测',
-          value: 5
-        },
-        {
-          label: '用车',
-          value: 6
-        },
-      ],
-      newList: [
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-        {
-          img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男',
-          number: '3026',
-          type: '导购',
-          status: true
-        },
-      ],
-      rankList: [
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-        {
-          img: rankCar,
-          name: '哈弗H6',
-          number: '1111',
-          time: '近1年',
-        },
-      ],
-    }
-  },
-};
+const tabList = ref(
+  [
+    {
+      label: '推荐',
+      value: 0
+    },
+    {
+      label: '视频',
+      value: 1
+    },
+    {
+      label: '新闻',
+      value: 2
+    },
+    {
+      label: '试驾',
+      value: 3
+    },
+    {
+      label: '导购',
+      value: 4
+    },
+    {
+      label: '评测',
+      value: 5
+    },
+    {
+      label: '用车',
+      value: 6
+    },
+  ],
+)
+const newList = ref(
+ [
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+    {
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
+      title: '爱在大草原 吉利豪越的设计师一定是个暖男',
+      number: '3026',
+      type: '导购',
+      status: true
+    },
+  ],
+)
+const rankList = ref(
+  [
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+    {
+      img: rankCar,
+      name: '哈弗H6',
+      number: '1111',
+      time: '近1年',
+    },
+  ],
+)
 </script>
 
 <style lang="scss">

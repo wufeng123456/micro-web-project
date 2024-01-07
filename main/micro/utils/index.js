@@ -26,6 +26,7 @@ export const filterApp = (key, value) => {
 
 // 子应用是否做了切换
 export const isTurnChild = () => {
+  debugger
   const { pathname, hash } = window.location
   const url = pathname + hash
 

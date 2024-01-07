@@ -67,46 +67,42 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'car-swapper',
-  data () {
-    return {
-      swapperList: [
-        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3884457102,4018905964&fm=26&gp=0.jpg',
-        'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2329770250,1897745847&fm=26&gp=0.jpg',
-        'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=395380977,272417941&fm=26&gp=0.jpg',
-      ],
-      currentIndex: 0,
-      leftHover: false,
-      rightHover: false,
-      textList: [
-        '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
-        '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
-        '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
-        '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
-        '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
-        '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
-        '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
-        '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
-      ]
-    }
-  },
-  methods: {
-    changeIndex(index) {
-      if (index < 0) {
-        index = this.swapperList.length - 1
-      }
-      if (index > this.swapperList.length - 1) {
-        index = 0
-      }
-      this.currentIndex = index
-    },
-    hoverArrow(key, type){
-      this[key] = type;
-    }
-  },
-};
+<script setup>
+import { ref } from 'vue'
+const swapperList = ref(
+  [
+    'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3884457102,4018905964&fm=26&gp=0.jpg',
+    'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2329770250,1897745847&fm=26&gp=0.jpg',
+    'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=395380977,272417941&fm=26&gp=0.jpg',
+  ]
+)
+let currentIndex = ref(0)
+let leftHover = ref(false)
+let rightHover = ref(false)
+const textList = ref(
+  [
+    '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
+    '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
+    '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
+    '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
+    '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
+    '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
+    '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
+    '拆解BBAL：车架生锈、强度不如哈弗豪华品牌还能买吗还能买吗',
+  ]
+)
+const changeIndex = (index) => {
+  if (index < 0) {
+    index = swapperList.value.length - 1
+  }
+  if (index > swapperList.value.length - 1) {
+    index = 0
+  }
+  currentIndex.value = index
+}
+const hoverArrow = (key, type) => {
+  [key].value = type;
+}
 </script>
 
 <style lang="scss">

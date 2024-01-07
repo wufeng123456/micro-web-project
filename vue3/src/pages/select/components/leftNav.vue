@@ -28,7 +28,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 import { ref } from 'vue'
 const wordList = []
 
@@ -78,25 +78,14 @@ const carList = [
 
 const carData = {}
 
-export default {
-  name: 'leftNav',
-  setup() {
-    const currentWord = ref(0)
-    for (let i = 65; i <= 90; i++) {
-      wordList.push(String.fromCharCode(i))
-    }
+const currentWord = ref(0)
+for (let i = 65; i <= 90; i++) {
+  wordList.push(String.fromCharCode(i))
+}
 
-    wordList.forEach(item => {
-      carData[item] = carList
-    })
-
-    return {
-      currentWord,
-      wordList,
-      carData,
-    }
-  }
-};
+wordList.forEach(item => {
+  carData[item] = carList
+})
 </script>
 
 <style lang="scss">

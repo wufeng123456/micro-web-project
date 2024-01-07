@@ -14,6 +14,9 @@ import Loading from "./components/Loading";
 
 import { loading, header, nav } from './store'
 
+// const loadingStatus = ref(loading.loadingStatus)
+// const headerStatus = ref(header.headerStatus)
+// const navStatus = ref(nav.navStatus)
 export default {
   name: 'App',
   components: {
@@ -34,7 +37,7 @@ export default {
 <style>
 html, body, #micro_web_main_app{
   width: 100%;
-  /*height: 100%;*/
+  height: 100%;
 }
 * {
   margin: 0;

@@ -11,6 +11,7 @@ export const rewriteRouter = () => {
 
   // 监听返回事件
   window.onpopstate = async function () {
+    debugger;
     await turnApp()
   }
 }

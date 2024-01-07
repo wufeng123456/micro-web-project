@@ -8,16 +8,9 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 import LeftNav from './components/leftNav.vue'
 import selectDetail from './components/selectDetail.vue'
-export default {
-  name: 'index',
-  components: {
-    LeftNav,
-    selectDetail,
-  },
-};
 </script>
 
 <style lang="scss">

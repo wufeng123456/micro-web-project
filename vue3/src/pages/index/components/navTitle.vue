@@ -26,17 +26,9 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 import { navTitleList } from '../../../store'
 
-export default {
-  name: 'navTitle',
-  setup() {
-    return {
-      navTitleList,
-    }
-  },
-};
 </script>
 
 <style lang="scss">

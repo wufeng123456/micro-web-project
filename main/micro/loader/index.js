@@ -8,6 +8,8 @@ export const loadHtml = async (app) => {
   // 子应用的入口
   let entry = app.entry
 
+  if (!entry) return
+
   const [ dom, scripts ] = await parseHtml(entry, app.name)
 
   const ct = document.querySelector(container)

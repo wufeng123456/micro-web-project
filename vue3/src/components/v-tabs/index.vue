@@ -12,57 +12,49 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'index',
-  props: {
-    list: {
-      type: Array,
-      default: () => ([])
-    }
-  },
-  data () {
-    return {
-      navList: [
-        {
-          label: '推荐',
-          value: 0
-        },
-        {
-          label: '热门车系',
-          value: 1
-        },
-        {
-          label: '10万以下',
-          value: 2
-        },
-        {
-          label: '10-20万',
-          value: 3
-        },
-        {
-          label: '20-30万',
-          value: 4
-        },
-        {
-          label: '30万以上',
-          value: 5
-        },
-      ],
-      currentNav: 0,
-    }
-  },
-  computed: {
-    tabList() {
-      return this.list.length ? this.list : this.navList
-    }
-  },
-  methods: {
-    changeActiveItem(index) {
-      this.currentNav = index
-    }
-  },
-};
+<script setup>
+import { ref, computed } from 'vue'
+const props = defineProps({
+  list: {
+    type: Array,
+    default: () => ([])
+  }
+})
+const navList = ref(
+  [
+    {
+      label: '推荐',
+      value: 0
+    },
+    {
+      label: '热门车系',
+      value: 1
+    },
+    {
+      label: '10万以下',
+      value: 2
+    },
+    {
+      label: '10-20万',
+      value: 3
+    },
+    {
+      label: '20-30万',
+      value: 4
+    },
+    {
+      label: '30万以上',
+      value: 5
+    },
+  ]
+)
+let currentNav = ref(0)
+const tabList = computed(() => {
+  return props.list.length ? props.list : navList
+})
+const changeActiveItem = (index) => {
+  currentNav = index
+}
 </script>
 
 <style lang="scss">

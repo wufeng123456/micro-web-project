@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 const icon = require('../../../assets/car-detail-img.png')
 import pagination from './pagination.vue'
 const carData = {
@@ -22,23 +22,11 @@ const carData = {
   price: '5.34-9.56万'
 }
 
-export default {
-  name: 'selectDetail',
-  components: {
-    pagination,
-  },
-  setup() {
-    const detailList = []
+const detailList = []
 
-    for (let i = 0; i < 32; i++) {
-      detailList.push(carData)
-    }
-
-    return {
-      detailList,
-    }
-  }
-};
+for (let i = 0; i < 32; i++) {
+  detailList.push(carData)
+}
 </script>
 
 <style lang="scss">

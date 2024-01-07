@@ -6,10 +6,7 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'ad',
-};
+<script setup>
 </script>
 
 <style lang="scss">

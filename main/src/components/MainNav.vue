@@ -53,6 +53,7 @@ export default {
     const route = useRoute()
 
     watch(route, (val) => {
+      console.log(val, 'router')
       for (let i = 0; i < NAV_LIST.length; i++) {
         if (val.fullPath.indexOf(NAV_LIST[i].url) !== -1) {
           currentIndex.value = i
@@ -65,11 +66,14 @@ export default {
 
     const searchStatus = ref(true)
     const setCurrentIndex = (data, index) => {
+      console.log(data, 'datata')
+      debugger
       if (data.url  === route.fullPath) {
         return
       }
       currentIndex.value = index
-      router.push(data.url)
+      // router.push(data.url)
+      location.href = data.url
     }
 
     const setSearchStatus = (type) => {

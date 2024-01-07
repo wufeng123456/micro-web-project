@@ -45,7 +45,7 @@ export const mounted = async (app) => {
 }
 
 export const destoryed = async (app) => {
-  app && app.unmount && app.unmount()
+  app && app.unmount && app.unmount(app)
 
   // 对应的执行以下主应用的生命周期
   await runMainLifeCycle('destoryed')
