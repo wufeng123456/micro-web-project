@@ -73,6 +73,7 @@ export default {
       }
       currentIndex.value = index
       // router.push(data.url)
+      console.log(router)
       location.href = data.url
     }
 
