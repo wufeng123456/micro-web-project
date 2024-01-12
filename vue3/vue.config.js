@@ -1,6 +1,12 @@
-const path = require('path')
-const packageJson = require('./package.json')
-const port = 9002
+const path = require('path');
+
+const packageName = 'vue3'
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
+
+const port = 9002;
 
 module.exports = {
   outputDir: 'dist',
@@ -19,14 +25,15 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src')
-      }
+        '@': resolve('src'),
+      },
     },
     output: {
       // 把子应用打包成 umd 库格式
-      library: `${packageJson.name}`,
+      // filename: 'vue3.js',
+      library: `${packageName}`,
       libraryTarget: 'umd',
-      chunkLoadingGlobal: `webpackJsonp_${packageJson.name}`,
+      chunkLoadingGlobal: `webpackJsonp_${packageName}`,
     },
-  }
-}
+  },
+};

@@ -67,7 +67,6 @@ export default {
     const searchStatus = ref(true)
     const setCurrentIndex = (data, index) => {
       console.log(data, 'datata')
-      debugger
       if (data.url  === route.fullPath) {
         return
       }
